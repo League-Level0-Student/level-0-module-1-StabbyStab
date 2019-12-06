@@ -15,7 +15,7 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class RobotInSpace implements KeyEventDispatcher {
 
-	Robot rob = new Robot("mini");
+	Robot win = new Robot("mini");
 
 	/*
 	 * Make the Robot move around the screen when the arrow keys are pressed...
@@ -28,21 +28,35 @@ public class RobotInSpace implements KeyEventDispatcher {
 	private void moveRobot(int keyPressed) throws InterruptedException {
 		// 2. Print out the keyPressed variable and write down the numbers for
 		// each arrow key
-
+		System.out.println(keyPressed);
 		// 3. If the up arrow is pressed, move the Robot up the screen.
-
+win.setSpeed(50);
+		if (keyPressed==38) {
+	win.setAngle(0);
+	win.move(10);
+	
+}
 		// 4. If the down arrow is pressed, move the Robot down.
-
+if (keyPressed==40) {
+win.setAngle(180);
+win.move(10);
+}
 		// 5. If the left arrow is pressed, make the Robot go left.
-
+if(keyPressed==37) {
+	win.setAngle(-90);
+	win.move(10);
+}
 		// 6. If right is pressed, move the Robot right.
-
+if(keyPressed==39) {
+	win.setAngle(90);
+	win.move(10);
+}
 		// 7. Run your program and move the Robot to RD-2D for a surprise!
 	}
 
 	private void checkIfR2D2Found() throws Exception {
-		int robotLocationX = rob.getX();
-		int robotLocationY = rob.getY();
+		int robotLocationX = win.getX();
+		int robotLocationY = win.getY();
 
 		if (robotLocationX <= 7300 && robotLocationX >= 720 && robotLocationY >= 150 && robotLocationY <= 160)
 			playEureka();
@@ -55,8 +69,8 @@ public class RobotInSpace implements KeyEventDispatcher {
 	private void controlTheRobot() {
 		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
 		Robot.setWindowImage("planet.jpg");
-		rob.penUp();
-		rob.setSpeed(10);
+		win.penUp();
+		win.setSpeed(10);
 	}
 
 	public boolean dispatchKeyEvent(KeyEvent e) {
