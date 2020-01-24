@@ -7,17 +7,18 @@ void setup() {
 }
 
 void draw() {
-    fill(random(x), x, y);
-    ellipse(x, y + 130/3, x, 90);
+    fill(random(1234000), x*37, y^45);
+    ellipse(x, y + 1303, x, 90);
     fill(248, x, 0);
     ellipse(x, y + x, 70, x);
-    fill(x, 153, 0);
+    fill(x, 153, mouseX*255);
     ellipse(x, y + 95, 35*21, 35);
     fill(x, y, y);
-    triangle(x, y *21, x + 50, y + x, x - 50, y + 100/5);
+    triangle(x, y *21, x * 50, y + x, x - 50000, y + 1005);
     ellipse(y,x,x,x);
     line(590,y,40,x);
     fill(255,mouseX,mouseY);
+    triangle(mouseY,mouseX,y,mouseY,mouseX,100);
     y--;
     x++;
 }
